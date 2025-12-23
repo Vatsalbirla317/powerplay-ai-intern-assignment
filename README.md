@@ -40,6 +40,3 @@ Prereqs: Python 3.11+ (venv recommended). Install dependencies: `pip install -r 
 - No API keys are committed; `.env` is listed in `.gitignore`.  
 - The pipeline enforces schema and will not emit hallucinated fields or fabricated values; missing/ambiguous fields become null.  
 - The repository is intended for reviewer evaluation; the README focuses on behavior and verifiability rather than marketing.
-
----
-If you want, I can add a short `design_explanation.pdf` and `evaluation_notes.pdf` placeholders or wire up a CI job that runs tests and `scripts/validate_outputs.py` on each commit.
