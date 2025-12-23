@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: ai_structurer
+Version: 0.1.0
+Summary: Convert unstructured business text to strict JSON using Groq LLM
+Author: 
+Requires-Dist: requests>=2.28.0
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,0 +1,15 @@
+Evaluation Notes
+
+Purpose: Record test cases, edge cases, and notes for reviewers evaluating the submission.
+
+Contents:
+- Test inputs used: `test_inputs.txt` (example lines covering explicit deadlines, vague deadlines, missing fields, and multiple formats).
+- Validation: `scripts/validate_outputs.py` enforces exact key sets, numeric quantity, ISO deadline format, and allowed urgency values.
+- Recovery tests: Unit tests validate local repair behavior, LLM correction retry, and final null-filled fallback.
+- Known limitations: Quantity parsing is intentionally minimal (numeric parsing only); richer normalization (packs, unit conversion) is future work.
+
+Review guidance:
+- Run tests with `pytest -q` and validate outputs with `python scripts/validate_outputs.py`.
+- Use `AI_STRUCTURER_USE_MOCK=1` for offline testing; provide `GROQ_API_KEY` for live evaluation.
+
+Conclusion: The pipeline enforces safety-first guarantees; outputs are conservative and auditable.

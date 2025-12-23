@@ -1,0 +1,16 @@
+README.md
+setup.py
+ai_structurer/__init__.py
+ai_structurer/cli.py
+ai_structurer/llm.py
+ai_structurer/parser.py
+ai_structurer/runner.py
+ai_structurer/schema.py
+ai_structurer/utils.py
+ai_structurer.egg-info/PKG-INFO
+ai_structurer.egg-info/SOURCES.txt
+ai_structurer.egg-info/dependency_links.txt
+ai_structurer.egg-info/requires.txt
+ai_structurer.egg-info/top_level.txt
+tests/test_parser.py
+tests/test_schema_and_utils.py

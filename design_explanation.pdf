@@ -1,0 +1,13 @@
+Design Explanation
+
+This document summarizes the design of the deterministic pipeline implemented in this repository.
+
+Key points:
+- Goal: Convert unstructured business text (one line per request) into strictly-valid JSON objects.
+- LLM role: Groq (llama3) used only as a probabilistic extractor; Python code enforces correctness.
+- Validation: Canonical schema in code is the single source of truth. Keys outside the schema are dropped; missing keys are inserted with null.
+- Recovery strategy: Attempt a direct parse of model output; apply conservative local repair when parsing fails; perform a single model correction retry; fallback to a null-filled, schema-valid record if still invalid.
+- Deadline handling: Parse explicit dates to ISO format; ambiguous phrases ("ASAP", "soon") become null.
+- Urgency: Deterministic rules (high ≤7 days or urgent keywords; medium 7–30; low >30 or none) ensure reproducibility and auditability.
+
+The system is intentionally conservative: it prefers nulls to fabricated values and prioritizes precision and traceability over recall.
