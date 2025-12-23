@@ -36,7 +36,3 @@ Prereqs: Python 3.11+ (venv recommended). Install dependencies: `pip install -r 
 - Unit tests: `pytest -q`  
 - Output validation script: `python scripts/validate_outputs.py` (checks JSON validity, exact keys, types, ISO deadlines)
 
-## Notes
-- No API keys are committed; `.env` is listed in `.gitignore`.  
-- The pipeline enforces schema and will not emit hallucinated fields or fabricated values; missing/ambiguous fields become null.  
-- The repository is intended for reviewer evaluation; the README focuses on behavior and verifiability rather than marketing.
